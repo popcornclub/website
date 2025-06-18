@@ -1,0 +1,46 @@
+/* Basic reset & typography */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #fafafa;
+}
+
+/* Center block vertically & horizontally */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  max-width: 640px;
+  padding: 0 1rem;
+  line-height: 1.6;
+}
+
+/* Headline & subtitle */
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.subtitle {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Link styling */
+a {
+  color: #006aff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.links {
+  margin-top: 1.5rem;
+  font-weight: 500;
+}
