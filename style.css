@@ -1,46 +1,63 @@
-/* Basic reset & typography */
+/* Root scale — 16 → 20 px depending on viewport */
+:root {
+  --step-0: clamp(1rem, 0.875rem + 0.5vw, 1.25rem); /* body */
+  --step-1: calc(var(--step-0) * 1.25);             /* h1 / subtitle */
+}
+
 html, body {
   height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--step-0);
+  line-height: 1.55;
   color: #111;
   background: #fafafa;
 }
 
-/* Center block vertically & horizontally */
+/* Center stack */
 body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem;              /* keeps breathing room on ultrawide */
 }
 
+/* Core layout */
 main {
-  max-width: 640px;
-  padding: 0 1rem;
-  line-height: 1.6;
+  max-width: 42rem;           /* 672 px */
+  width: 100%;
 }
 
-/* Headline & subtitle */
+/* Headline */
 h1 {
-  margin: 0 0 0.5rem;
-  font-size: 2rem;
+  font-family: "Fraunces", serif;
+  font-size: var(--step-1);
   font-weight: 600;
+  margin: 0 0 0.4em;
 }
+
+/* Subtitle inherits h1 sizing but lighter weight */
 .subtitle {
   display: block;
-  font-size: 1rem;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
 }
 
-/* Link styling */
+/* Links */
 a {
-  color: #006aff;
-  text-decoration: none;
+  color: #0057ff;
+  text-decoration-thickness: .08em;
+  text-underline-offset: .1em;
+  transition: color .15s ease;
 }
-a:hover {
-  text-decoration: underline;
-}
+a:hover { color: #002f9e; }
+
 .links {
-  margin-top: 1.5rem;
+  margin-top: 1.75em;
   font-weight: 500;
+}
+
+/* Respect large “canvas” heights */
+@media (min-height: 50rem) {
+  body { padding: 4rem; }
 }
