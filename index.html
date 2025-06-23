@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>James Owen — Artist & Designer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Professional font pairing -->
+  <!-- Preload & load variable fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Dark / light toggle -->
+  <button id="themeToggle" aria-label="Toggle dark mode">🌓</button>
+
   <main>
     <h1>James Owen <span class="subtitle">Artist and Designer</span></h1>
 
@@ -33,6 +37,24 @@
       <a href="https://twitter.com/jamesowenco" target="_blank" rel="noopener">Twitter</a>,
       or <a href="mailto:hello@jamesowen.co">email</a>.
     </p>
+
+    <section class="faq">
+      <h2>Common Questions</h2>
+      <details>
+        <summary>What kind of work do you do?</summary>
+        <p>I specialize in creating visual experiences that merge design and storytelling across digital and physical mediums.</p>
+      </details>
+      <details>
+        <summary>Are you available for freelance or collaborations?</summary>
+        <p>Currently, I'm focused on full-time work, but I love to hear about inspiring opportunities and creative partnerships.</p>
+      </details>
+      <details>
+        <summary>Where can I see more of your work?</summary>
+        <p>More of my past and current projects are occasionally shared on Instagram, and I’m working on a new portfolio site.</p>
+      </details>
+    </section>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
