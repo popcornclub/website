@@ -26,8 +26,7 @@
     toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
   };
 
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initialTheme = getStoredTheme() || (prefersDark ? 'dark' : 'light');
+  const initialTheme = getStoredTheme() || 'light';
 
   applyTheme(initialTheme);
 
