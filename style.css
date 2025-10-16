@@ -1,7 +1,7 @@
 :root {
-  --font-display: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-text: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-ui: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-text: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-ui: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --step--1: clamp(0.88rem, 0.85rem + 0.1vw, 0.98rem);
   --step-0: clamp(1rem, 0.96rem + 0.25vw, 1.18rem);
   --step-1: clamp(1.3rem, 1.16rem + 0.8vw, 1.75rem);
@@ -14,6 +14,9 @@
   --fg: #1f1f21;
   --muted: color-mix(in srgb, var(--fg) 45%, #8e8e92);
   --muted-strong: color-mix(in srgb, var(--fg) 60%, #7d7d83);
+  --tone-subtitle: color-mix(in srgb, var(--fg) 28%, #ffffff 72%);
+  --tone-label: color-mix(in srgb, var(--fg) 40%, #ffffff 60%);
+  --tone-contact: color-mix(in srgb, var(--fg) 52%, #f5f5f7 48%);
   --link: color-mix(in srgb, var(--fg) 82%, #4d5cff 18%);
   --link-hover: color-mix(in srgb, var(--fg) 70%, #5d6cff 30%);
 }
@@ -24,6 +27,9 @@
   --fg: #f2f4fa;
   --muted: color-mix(in srgb, var(--fg) 38%, #6d7a8c);
   --muted-strong: color-mix(in srgb, var(--fg) 52%, #7f8fa3);
+  --tone-subtitle: color-mix(in srgb, var(--fg) 30%, #94a4bc 70%);
+  --tone-label: color-mix(in srgb, var(--fg) 45%, #8fa0ba 55%);
+  --tone-contact: color-mix(in srgb, var(--fg) 60%, #7d8ca4 40%);
   --link: color-mix(in srgb, var(--fg) 75%, #6f8dff 25%);
   --link-hover: color-mix(in srgb, var(--fg) 60%, #7b98ff 40%);
 }
@@ -51,8 +57,8 @@ main {
 
 h1 {
   font-family: var(--font-display);
-  font-weight: 520;
-  letter-spacing: -0.015em;
+  font-weight: 600;
+  letter-spacing: -0.018em;
   font-size: var(--step-2);
   line-height: 1.08;
   margin: 0;
@@ -64,22 +70,35 @@ h1 {
   margin-top: clamp(0.35rem, 1vw, 0.65rem);
   font-family: var(--font-display);
   font-size: var(--step-1);
-  font-weight: 350;
-  letter-spacing: -0.01em;
+  font-weight: 500;
+  letter-spacing: -0.012em;
   line-height: 1.2;
-  color: var(--muted);
+  color: var(--tone-subtitle);
 }
 
 a {
   color: inherit;
-  text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--fg) 35%, transparent);
-  text-decoration-thickness: 0.06em;
-  text-underline-offset: 0.22em;
-  transition: text-decoration-color 0.18s ease;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.18s ease;
+}
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2em;
+  width: 100%;
+  height: 1px;
+  background: var(--link);
+  opacity: 0;
+  transition: opacity 0.16s ease;
 }
 a:hover {
-  text-decoration-color: color-mix(in srgb, var(--fg) 70%, transparent);
+  color: var(--link-hover);
+}
+a:hover::after {
+  opacity: 1;
+  background: var(--link-hover);
 }
 
 #themeToggle {
@@ -154,7 +173,7 @@ main > p + p {
   font-weight: 500;
   display: inline-flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.85em;
   flex-wrap: wrap;
   font-size: var(--step--1);
   letter-spacing: 0.04em;
@@ -166,18 +185,30 @@ main > p + p {
   font-size: var(--step--1);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--muted) 75%, transparent);
+  color: var(--tone-contact);
   margin-right: 0.75em;
 }
 
-.links-divider {
-  font-family: var(--font-ui);
-  opacity: 0.28;
-  letter-spacing: 0;
+.links a {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 450;
+  position: relative;
 }
 
-.links a {
-  font-weight: 450;
+.links a:not(:first-of-type) {
+  margin-left: 0.95em;
+}
+
+.links a:not(:first-of-type)::before {
+  content: "";
+  position: absolute;
+  left: -0.55em;
+  top: 50%;
+  width: 1px;
+  height: 0.85em;
+  background: color-mix(in srgb, var(--muted) 45%, #ffffff 20%);
+  transform: translateY(-50%);
 }
 
 p strong {
@@ -188,7 +219,7 @@ p strong {
   font-weight: 500;
   display: inline-block;
   margin-bottom: 0.25em;
-  color: var(--muted-strong);
+  color: var(--tone-label);
 }
 
 p em {
