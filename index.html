@@ -1,52 +1,234 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>James Owen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
- 
-  <!-- Load self-hosted fonts -->
+  <meta name="description" content="James Owen is a product design director at Meta and former Apple Design Team leader, with work spanning Liquid Glass, Apple Intelligence, Vision Pro, and visionOS.">
+  <meta name="keywords" content="James Owen, product designer, design director, product design director, Meta, Apple, Apple Design Team, Vision Pro, visionOS, Apple Intelligence, Liquid Glass, ManvsMachine, advertising, London, San Francisco">
+  <meta name="author" content="James Owen">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="James Owen — Product Design Director">
+  <meta property="og:description" content="Product design director at Meta and former Apple Design Team leader, with work spanning Liquid Glass, Apple Intelligence, Vision Pro, visionOS, and ManvsMachine.">
+  <meta property="og:site_name" content="James Owen">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="James Owen — Product Design Director">
+  <meta name="twitter:description" content="Product design director at Meta and former Apple Design Team leader, with work spanning Liquid Glass, Apple Intelligence, Vision Pro, visionOS, and ManvsMachine.">
+  <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>James Owen — Product Design Director at Meta</title>
+  <style>
+    :root {
+      --ink: #121210;
+      --quiet: #77756f;
+      --paper: #fdfdfc;
+    }
 
-  <link rel="stylesheet" href="style.css">
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #f3f2ed;
+        --quiet: #a09e97;
+        --paper: #111110;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: var(--paper);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Inter", "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: 400;
+      font-kerning: normal;
+      font-synthesis: none;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    main {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100svh;
+      width: min(100%, 1120px);
+      margin: 0 auto;
+      padding: clamp(48px, 7vw, 92px) clamp(24px, 6.5vw, 88px) clamp(30px, 4vw, 54px);
+    }
+
+    .intro {
+      max-width: 950px;
+      margin: 0;
+      font-size: clamp(29px, 3.8vw, 47px);
+      font-weight: 500;
+      line-height: 1.11;
+      letter-spacing: -0.022em;
+      hanging-punctuation: first last;
+      text-wrap: pretty;
+    }
+
+    .intro p {
+      max-width: 31ch;
+      margin: 0;
+    }
+    .intro p:nth-child(2) { margin-top: 0.92em; }
+    .intro p:nth-child(3) { margin-top: 0.58em; }
+    .intro p:last-child { margin-top: 0.88em; }
+
+    .footer {
+      grid-row: 2 / 4;
+      align-self: stretch;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      width: 100%;
+      max-width: 100%;
+      margin-top: clamp(22px, 3vw, 34px);
+    }
+
+    .footer-identity {
+      grid-row: 1;
+    }
+
+    .name {
+      margin: 0 0 5px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.35;
+      letter-spacing: -0.005em;
+    }
+
+    .experience {
+      margin: 0;
+      color: var(--quiet);
+      font-size: clamp(17px, 1.6vw, 19px);
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      word-spacing: 0.08em;
+    }
+
+    .experience a,
+    .contact a {
+      color: inherit;
+      text-decoration: none;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .experience a:hover,
+    .contact a:hover { text-decoration: underline; }
+
+    .experience a:active,
+    .contact a:active { opacity: 0.55; }
+
+    .experience a:focus-visible,
+    .contact a:focus-visible {
+      outline: 1.5px solid var(--ink);
+      outline-offset: 4px;
+    }
+
+    .contact {
+      grid-row: 3;
+      align-self: end;
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin: 0;
+      padding: 0;
+      color: var(--quiet);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    ::selection {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    @media (max-width: 620px) {
+      html,
+      body { height: 100%; }
+
+      body { overflow: hidden; }
+
+      main {
+        grid-template-rows: auto 1fr auto;
+        height: 100svh;
+        min-height: 0;
+        overflow: hidden;
+        padding: max(24px, env(safe-area-inset-top)) 20px max(22px, env(safe-area-inset-bottom));
+      }
+
+      .intro {
+        font-size: clamp(22px, 6.25vw, 25px);
+        line-height: 1.11;
+        letter-spacing: -0.018em;
+      }
+
+      .intro p { max-width: none; }
+      .intro p:nth-child(2) { margin-top: 0.8em; }
+      .intro p:nth-child(3) { margin-top: 0.5em; }
+      .intro p:last-child { margin-top: 0.74em; }
+
+      .footer { margin-top: 18px; }
+      .experience { font-size: 15px; }
+      .contact {
+        gap: 10px 14px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 620px) and (max-height: 700px) {
+      main {
+        padding-top: max(16px, env(safe-area-inset-top));
+        padding-bottom: max(16px, env(safe-area-inset-bottom));
+      }
+
+      .intro { font-size: clamp(19px, 5.9vw, 22px); }
+      .intro p:nth-child(2) { margin-top: 0.64em; }
+      .intro p:nth-child(3) { margin-top: 0.4em; }
+      .intro p:last-child { margin-top: 0.6em; }
+      .experience { margin-top: 12px; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .contact a { transition: text-decoration-color 120ms ease; }
+    }
+  </style>
 </head>
 <body>
-  <!-- Dark / light toggle -->
-  <button id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false">
-    <span class="sr-only">Toggle color theme</span>
-    <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <circle cx="12" cy="12" r="5.25" stroke="currentColor" stroke-width="1.5" fill="none" />
-      <path d="M12 2.25v2.5M12 19.25v2.5M4.75 12h-2.5M21.75 12h-2.5M6.6 6.6 4.8 4.8M19.2 19.2l-1.8-1.8M6.6 17.4 4.8 19.2M19.2 4.8l-1.8 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-    </svg>
-    <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path d="M17.75 15.5A8.25 8.25 0 0 1 8.5 6.25a6.75 6.75 0 1 0 9.25 9.25z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
-
   <main>
-    <h1>James Owen <span class="subtitle">Artist and Designer</span></h1>
-    <p>
-      <strong>Currently —</strong>
-      Apple Design Team
-    </p>
-    <p>
-      <strong>Previously —</strong>
-      Creative Director at ManvsMachine collaborating with brands such as Apple,
-      Nike, Google and Xbox. Together we created projects that earned worldwide recognition including
-      <em>D&AD Pencils</em>, <em>Cannes Gold Lions</em>, and many more.
-    </p>
+    <section class="intro" aria-label="Introduction">
+      <p>A career of making the complicated feel simple through design.</p>
+      <p>Seven years leading design at Apple put that to the real test: Liquid Glass, Apple Intelligence, Vision Pro, and more.</p>
+      <p>Working in advertising in London taught me the craft. Hundreds of decisions on every frame of film or imagery until the complicated felt effortless.</p>
+      <p>Now I lead Product Design at Meta.</p>
+    </section>
 
-    <p class="links">
-      <span class="sr-only">Stay in touch via</span>
-      <a href="mailto:hello@jamesowen.co">hello@jamesowen.co</a>
-      <a href="https://www.instagram.com/jamesowenco" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://x.com/jamesowenco" target="_blank" rel="noopener">X</a>
-    </p>
+    <footer class="footer">
+      <div class="footer-identity">
+        <p class="name">James Owen</p>
+        <p class="experience" aria-label="Companies">
+          <a href="https://www.meta.com">Meta</a> ·
+          <a href="https://www.apple.com">Apple</a> ·
+          <a href="https://mvsm.com">ManvsMachine</a>
+        </p>
+      </div>
+
+      <nav class="contact" aria-label="Contact">
+        <a href="mailto:hello@jamesowen.co">Email</a>
+        <a href="https://www.instagram.com/jamesowenco">Instagram</a>
+        <a href="https://www.linkedin.com/in/jamesowenco">LinkedIn</a>
+      </nav>
+    </footer>
   </main>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
