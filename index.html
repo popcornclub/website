@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="light">
   <meta name="description" content="James Owen is a product design director at Meta and former Apple Design Team leader, with work spanning Liquid Glass, Apple Intelligence, Vision Pro, and visionOS.">
   <meta name="keywords" content="James Owen, product designer, design director, product design director, Meta, Apple, Apple Design Team, Vision Pro, visionOS, Apple Intelligence, Liquid Glass, ManvsMachine, advertising, London, San Francisco">
   <meta name="author" content="James Owen">
@@ -21,17 +21,9 @@
   <title>James Owen — Product Design Director at Meta</title>
   <style>
     :root {
-      --ink: #121210;
+      --ink: #111111;
       --quiet: #77756f;
-      --paper: #fdfdfc;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --ink: #f3f2ed;
-        --quiet: #a09e97;
-        --paper: #111110;
-      }
+      --paper: #ffffff;
     }
 
     * { box-sizing: border-box; }
@@ -150,6 +142,8 @@
       color: var(--paper);
     }
 
+    .mobile-line { display: inline; }
+
     @media (max-width: 620px) {
       html,
       body { height: 100%; }
@@ -166,11 +160,13 @@
 
       .intro {
         font-size: 20px;
-        line-height: 1.11;
-        letter-spacing: -0.018em;
+        line-height: 1.12;
+        letter-spacing: -0.024em;
       }
 
       .intro p { max-width: none; }
+      .mobile-line { display: block; }
+      .keep-together { white-space: nowrap; }
       .intro p:nth-child(2) { margin-top: 0.8em; }
       .intro p:nth-child(3) { margin-top: 0.5em; }
       .intro p:last-child { margin-top: 0.74em; }
@@ -211,8 +207,8 @@
 
     <section class="intro" aria-label="Introduction">
       <p>A career of making the complicated feel simple through design.</p>
-      <p>Seven years leading design at Apple put that to the real test: Liquid Glass, Apple Intelligence, Vision Pro, and more.</p>
-      <p>Working in advertising in London taught me the craft. Hundreds of decisions on every frame of film or imagery until the complicated felt effortless.</p>
+      <p><span class="mobile-line">Seven years leading design</span> <span class="mobile-line">at Apple put that to the real test:</span> <span class="mobile-line">Liquid Glass, Apple Intelligence,</span> <span class="mobile-line keep-together">Vision Pro, and more.</span></p>
+      <p><span class="mobile-line">Working in advertising</span> <span class="mobile-line">in London taught me the craft.</span> <span class="mobile-line">Hundreds of decisions on every</span> <span class="mobile-line">frame of film or imagery until</span> <span class="mobile-line">the complicated felt effortless.</span></p>
       <p>Now I lead Product Design at Meta.</p>
     </section>
 
